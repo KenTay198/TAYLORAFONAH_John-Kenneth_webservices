@@ -4,7 +4,7 @@ import client from "../config/redis";
 
 const getAllProjects = async (req: Request, res: Response) => {
   const allProjects = await projectsServices.getAllProjects(req.query);
-  await client.SETEX(req.url, 60 * 1000, JSON.stringify(allProjects));
+  await client.SETEX(req.originalUrl, 60 * 1000, JSON.stringify(allProjects));
   return res.json(allProjects);
 };
 
@@ -12,7 +12,7 @@ const getProjectById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const project = await projectsServices.getProjectById(id);
-  await client.SETEX(req.url, 60 * 1000, JSON.stringify(project));
+  await client.SETEX(req.originalUrl, 60 * 1000, JSON.stringify(project));
 
   return res.json(project);
 };

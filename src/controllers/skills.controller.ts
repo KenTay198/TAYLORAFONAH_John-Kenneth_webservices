@@ -4,7 +4,7 @@ import client from "../config/redis";
 
 const getAllSkills = async (req: Request, res: Response) => {
   const allSkills = await skillsServices.getAllSkills(req.query);
-  await client.SETEX(req.url, 60 * 1000, JSON.stringify(allSkills));
+  await client.SETEX(req.originalUrl, 60 * 1000, JSON.stringify(allSkills));
 
   return res.json(allSkills);
 };
@@ -13,7 +13,7 @@ const getSkillById = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const skill = await skillsServices.getSkillById(id);
-  await client.SETEX(req.url, 60 * 1000, JSON.stringify(skill));
+  await client.SETEX(req.originalUrl, 60 * 1000, JSON.stringify(skill));
 
   return res.json(skill);
 };

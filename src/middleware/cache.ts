@@ -6,11 +6,14 @@ export const cache = async (
   res: Response,
   next: NextFunction
 ) => {
-  const cache = await client.get(req.url);
+  const cache = await client.get(req.originalUrl);
 
   if (!cache) {
     return next();
   }
+
+  console.log("get from cache");
+  
 
   res.status(200).send(JSON.parse(cache));
 };
