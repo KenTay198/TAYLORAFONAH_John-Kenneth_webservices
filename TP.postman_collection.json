@@ -1,0 +1,553 @@
+{
+	"info": {
+		"_postman_id": "8d2f7332-5732-4505-9a5a-228109182e6c",
+		"name": "TP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18202839"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "POST /login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@test.com\",\r\n    \"password\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /refreshToken",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"john@ken.com\",\r\n    \"password\" : \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/refreshToken",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "GET /users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users?limit=1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "skills",
+									"value": "vue",
+									"disabled": true
+								},
+								{
+									"key": "skills",
+									"value": "react",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /users/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaebe2b0e70967d8b413b0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"userbinks@test.com\",\r\n    \"password\"  : \"test\",\r\n    \"role\" : \"user\",\r\n    \"skills\" : [\r\n        \"65eafa2c99a3ea32a8c4f17e\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /users/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skills\" : [\r\n        \"65eaf94d3ba8e7d83139fa4f\",\r\n        \"65eafa2c99a3ea32a8c4f17e\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eafa4599a3ea32a8c4f183"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /users/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Johnny\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaebe2b0e70967d8b413b0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "projects",
+			"item": [
+				{
+					"name": "GET /projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/projects?order=desc",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"projects"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /projects/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/projects/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf1e8d941026a17deccae"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /projects",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"API qui fait des trucs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/projects",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /projects/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"team\" : [\"65eaf1ffd941026a17deccb2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/projects/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf1e8d941026a17deccae"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /projects/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Johnny\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/projects/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf1e8d941026a17deccae"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "skills",
+			"item": [
+				{
+					"name": "GET /skills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/skills?order=desc&limit=2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skills"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /skills/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/skills/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skills",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf5613160bb893a46982f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /skills",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Tailwind\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/skills",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /skills/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Vue\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/skills/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skills",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf5613160bb893a46982f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /skills/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Johnny\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/skills/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"skills",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65eaf5613160bb893a46982f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzA5OTA5NjU4LCJleHAiOjE3MDk5MTE0NTh9.EvqHZJXqWFN_k8JTAFNQF2DHRSaxJWaGJYb2zjOL0iU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
