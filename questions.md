@@ -1,11 +1,3 @@
-# .ENV
-
-```
-MONGO_URI="mongodb+srv://johnkta7:ZXszu1tH2JPUyJUb@firstapp.gghbhen.mongodb.net/"
-JWT_SECRET="sjhozeuiohxwjbvnoherhiuyqvcbsbcksbcj"
-ORIGIN="*"
-``` 
-
 # QUESTIONS
 
 ## PUT & PATCH
