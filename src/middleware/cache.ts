@@ -12,8 +12,5 @@ export const cache = async (
     return next();
   }
 
-  console.log("get from cache");
-  
-
   res.status(200).send(JSON.parse(cache));
 };
